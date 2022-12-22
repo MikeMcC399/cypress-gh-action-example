@@ -14,10 +14,10 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Cypress run on ${{ github.event_name }}
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5
         with:
           record: true
           group: merge

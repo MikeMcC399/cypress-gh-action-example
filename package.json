@@ -7,7 +7,7 @@
   "scripts": {
     "test": "cypress run",
     "expect": "cypress-expect --passing 4",
-    "serve": "serve public",
+    "serve": "serve -p 5000 public",
     "build": "echo 'building app... done!'"
   },
   "repository": {
@@ -26,10 +26,10 @@
   },
   "homepage": "https://github.com/bahmutov/cypress-gh-action-example#readme",
   "devDependencies": {
-    "cypress": "7.7.0",
-    "cypress-expect": "2.5.1",
-    "serve": "11.3.2",
-    "lerna": "4.0.0"
+    "cypress": "9.7.0",
+    "cypress-expect": "2.5.3",
+    "lerna": "6.1.0",
+    "serve": "14.1.2"
   },
   "workspaces": [
     "packages/*"

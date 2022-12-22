@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       # only install the dependencies without running any tests
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5
         with:
           runTests: false
       - run: npm run build
@@ -21,7 +21,7 @@ jobs:
       # TIP: we want to avoid uploading node_modules since it is SLOW
       # https://glebbahmutov.com/blog/parallel-cypress-tests-gh-action/
       - name: Save built folders 🆙
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: built
           path: |
@@ -32,7 +32,7 @@ jobs:
     needs: install-job
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Download built folders ⏬
         uses: actions/download-artifact@v2
@@ -41,7 +41,7 @@ jobs:
 
       # install dependencies and run the tests
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5
         with:
           command: npm run expect -- --env lastName=Smith
         env:
